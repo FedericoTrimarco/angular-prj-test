@@ -14,7 +14,6 @@ export class FormGroupComponent {
   form: FormGroup = this.fb.group({});
 
   constructor(
-    protected hf: HookFunctions,
     private fb: FormBuilder,
     protected router: Router
   ){
@@ -34,16 +33,6 @@ export class FormGroupComponent {
         cittaNatale: new FormControl("", Validators.required),
       }
     )
-  }
-
-  login(openModal: boolean = false){
-    let ref = this;
-
-    if(!ref.hf.validateFormByFormGroupAndFormId(ref.form, "formPrincipale", openModal)){
-      return;
-    } else {
-      alert("FORM COMPILATA CON SUCCESSO !");
-    }
   }
 
   routeTo(path: any) {
